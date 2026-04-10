@@ -1,12 +1,15 @@
 {
   "name": "dequan-website",
   "version": "1.0.0",
+   "homepage": "https://ginji7579.github.io",
   "type": "module",
   "license": "MIT",
   "scripts": {
     "dev": "vite --host",
     "build": "vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
     "start": "NODE_ENV=production node dist/index.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "preview": "vite preview --host",
     "check": "tsc --noEmit",
     "format": "prettier --write ."
